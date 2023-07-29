@@ -67,5 +67,5 @@ jobs:
       - name: "Logs debug information."
         run: |
           echo "Debug."
-          # echo ${{ env.PULL_REQUEST_NUMBER }}
+          echo ${{ env.PULL_REQUEST_NUMBER }}
           # echo ${{ steps.dependabot-metadata.outputs.update-type }}
