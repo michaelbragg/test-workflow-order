@@ -1,0 +1,28 @@
+# yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
+
+name: "Deploy"
+
+on:
+  workflow_run:
+    workflows:
+      - 'Acceptance'
+    types:
+      - completed
+    branches:
+      - 'main'
+      - 'trunk'
+
+  workflow_dispatch:
+
+jobs:
+
+  deploy:
+    name: "Compile project."
+
+    runs-on: "ubuntu-latest"
+
+    steps:
+
+      - name: 'Temp action.'
+        run: |
+          echo "Deploy project."
