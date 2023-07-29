@@ -1,0 +1,28 @@
+name: 'Commit'
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'main'
+      - 'trunk'
+      - '!dependabot/**'
+  pull_request:
+    types:
+      - opened
+      - edited
+      - synchronize
+
+concurrency:
+  group: ${{ github.workflow }}--${{ github.head_ref || github.ref_name }}
+  cancel-in-progress: true
+
+jobs:
+  debug:
+    name: 'Debug Job'
+    runs-on: 'ubuntu-latest'
+    steps:
+
+        - name: 'Debug Output'
+          run: |
+             echo "Job: Debug Job, Step: Debug Output" 
