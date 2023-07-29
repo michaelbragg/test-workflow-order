@@ -17,3 +17,33 @@ jobs:
         - name: 'Debug Output'
           run: |
              echo "Job: Debug Job, Step: Debug Output" 
+
+  unit:
+    name: 'PHP Unit Tests'
+    runs-on: 'ubuntu-latest'
+
+    strategy:
+      matrix:
+        php-version:
+          - '8.1'
+
+    steps:
+
+      - name: 'Debug Output'
+        run: |
+          echo "Job: Unit, Step: Debug Output" 
+          
+  security:
+    name: 'PHP Security Analysis'
+    runs-on: 'ubuntu-latest'
+
+    strategy:
+      matrix:
+        php-version:
+          - '8.1'
+
+    steps:
+
+      - name: 'Debug Output'
+        run: |
+          echo "Job: PHP Security Analysis, Step: Debug Output"
