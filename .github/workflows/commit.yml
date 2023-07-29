@@ -3,15 +3,6 @@ name: 'Commit'
 on:
   workflow_dispatch:
   push:
-    branches:
-      - 'main'
-      - 'trunk'
-      - '!dependabot/**'
-  pull_request:
-    types:
-      - opened
-      - edited
-      - synchronize
 
 concurrency:
   group: ${{ github.workflow }}--${{ github.head_ref || github.ref_name }}
